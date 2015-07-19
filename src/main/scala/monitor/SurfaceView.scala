@@ -31,9 +31,7 @@ object SurfaceView {
 
   val bufferedImage = new BufferedImage(Surface.SIZE + BORDER * 2, Surface.SIZE + BORDER * 2, BufferedImage.TYPE_INT_RGB);
 
-  for (x <- 0 to Surface.SIZE - 1)
-    for (y <- 0 to Surface.SIZE - 1) {
-
+  for (x <- 0 to Surface.SIZE - 1; y <- 0 to Surface.SIZE - 1) {
       val rgb = Surface.get(x, y) match {
         case 0 => borderColor.getRGB
         case 10 => lineColor.getRGB

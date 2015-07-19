@@ -9,18 +9,15 @@ object Surface {
   
   // fill the matrix with allowed state 
   // 0 is not allowed by definition 
-  for (x <- 0 to SIZE-1) 
-    for (y <- 0 to SIZE-1) 
+  for (x <- 0 to SIZE-1 ; y <- 0 to SIZE-1) 
        matrix(x)(y) = 1
   
   // define source basket
-  for (x <- 100 to 105)
-    for (y <- 300 to 305)
+  for (x <- 100 to 105; y <- 300 to 305)
       matrix(x)(y) = 5;
 
   // define source basket
-  for (x <- 500 to 505)
-    for (y <- 300 to 305)
+  for (x <- 500 to 505; y <- 300 to 305)
       matrix(x)(y) = 7;
 
   // create a line on the surface

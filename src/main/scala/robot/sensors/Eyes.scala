@@ -5,7 +5,6 @@ import robot._
 import reality._
 import javax.media.jai.Histogram
 
-
 class EyesActor extends Actor with ActorLogging {
   def receive = {
     case Look(position) => look(position)
@@ -37,11 +36,9 @@ class Eyes (bodyPosition: BodyPosition) {
 
 class Eye(val x: Double, val y: Double) {
   val radius = 16;
-  val surface = Surface
-
+  
   val retina = Array.ofDim[Int](radius, radius)
-  for (i <- 0 to radius - 1)
-    for (k <- 0 to radius - 1)
+  for (i <- 0 to radius - 1; k <- 0 to radius - 1)
       retina(i)(k) = Surface.get(x.toInt - 8 + i, y.toInt - 8 + k);
 
   def histogram: Array[Int] = {
@@ -49,8 +46,7 @@ class Eye(val x: Double, val y: Double) {
     // 0, 5, 7, 10 are defined
     val temp = Array.ofDim[Int](11)
 
-    for (i <- 0 to radius - 1)
-      for (k <- 0 to radius - 1)
+    for (i <- 0 to radius - 1; k <- 0 to radius - 1)
         temp(Math.round(retina(i)(k))) += 1;
 
     temp
