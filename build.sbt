@@ -1,18 +1,16 @@
-name := "robot2"
+ThisBuild / version := "0.1.0-SNAPSHOT"
 
-version := "1.0"
+ThisBuild / scalaVersion := "2.13.13"
 
-scalaVersion := "2.11.6"
-
-resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
-
-scalacOptions ++= Seq("-feature")
+lazy val root = (project in file("."))
+  .settings(
+    name := "robot2"
+  )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor" % "2.3.9", 
-  "com.typesafe.akka" %% "akka-testkit" % "2.3.9", 
-  "org.scala-lang" % "scala-swing" % "2.11+",
-  "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test",
+  "com.typesafe.akka" %% "akka-actor" % "2.8.5",
+  "com.typesafe.akka" %% "akka-testkit" % "2.8.5",
+  "org.scala-lang" % "scala-swing" % "2.10.3",
+  "org.scalatest" % "scalatest_2.11" % "3.2.17" % "test",
   "org.mockito" % "mockito-all" % "2.0+"
 )
-

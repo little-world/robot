@@ -3,7 +3,7 @@ package robot.sensors
 import akka.actor._
 import robot._
 import reality._
-import javax.media.jai.Histogram
+
 
 class EyesActor extends Actor with ActorLogging {
   def receive = {

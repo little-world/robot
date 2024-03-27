@@ -1,6 +1,5 @@
 package reality
 
-
 import robot._
 
 object Surface {
